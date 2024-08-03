@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos"; // 반복되는 문자열은 const로
 
-let toDos = [];
+let toDos = []; //업데이트가 가능하다.
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); //(키, 값) 오직 text만 저장 할 수 있다.
@@ -13,6 +13,8 @@ function saveToDos() {
 function deleteTodo(event) {
   const li = event.target.parentElement;
   li.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
 }
 
 function paintToDo(newTodo) {
@@ -45,8 +47,8 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if (saveToDos !== null) {
-  const parsedToDos = JSON.parse(savedToDos);
-  toDos = parsedToDos;
-  parsedToDos.forEach(paintToDo);
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos); //string을 array로 만든다.
+  toDos = parsedToDos; //기존 내용 저장하기
+  parsedToDos.forEach(paintToDo); //paintToDo를 parsedToDos 배열의 요소마다 실행한다.
 }
