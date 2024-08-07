@@ -7,7 +7,17 @@
     <title>Momentum App</title>
   </head>
   <body>
-    <h2 id="clock">00:00:00</h2>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search..." />
+      <button id="search-button">
+        <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+      </button>
+    </div>
+
+    <div class="clock-container">
+      <h2 id="today" class="hidden">2023.08.07</h2>
+      <h2 id="clock">00:00:00</h2>
+    </div>
     <div class="division-line"></div>
     <form class="hidden" id="login-form">
       <input
@@ -21,10 +31,17 @@
 
     <h1 id="greeting" class="text-animated hidden"></h1>
 
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
+    <div id="todoBox">
+      <div id="todoBox-point"></div>
+      <form id="todo-form">
+        <input
+          type="text"
+          placeholder="Write a To Do and Press Enter"
+          required
+        />
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
     <div id="quote">
       <span></span>
       <span></span>
@@ -39,5 +56,10 @@
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/search.js "></script>
+    <script
+      src="https://kit.fontawesome.com/9076bbc1a6.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

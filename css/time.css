@@ -1,0 +1,24 @@
+.clock-container {
+  position: relative;
+}
+
+#clock {
+  font-size: 150px;
+  font-weight: bold;
+}
+
+#today {
+  font-size: 40px;
+  font-style: italic;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.division-line {
+  border-top: 10px solid white;
+  margin: 10px auto;
+  width: 250px;
+}
