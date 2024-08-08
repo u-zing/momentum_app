@@ -5,7 +5,7 @@ document.getElementById("search-button").addEventListener("click", function () {
     const searchURL = `https://www.google.com/search?q=${encodeURIComponent(
       query
     )}`;
-    window.location.href = searchURL; // 구글 검색 페이지로 리디렉션
+    window.open(searchURL, "_blank"); // 뉴탭에서 열리게
   }
 });
 
